@@ -1,0 +1,16 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    width: 800px;
+    margin: 0 auto;
+    padding: 0;
+}
+
+.innerItem {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    border: 1px solid green;
+
+}

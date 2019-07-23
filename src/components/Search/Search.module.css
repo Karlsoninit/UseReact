@@ -1,0 +1,8 @@
+.searchForm {
+    width: 600px;
+    display: block;
+    margin: 40px auto;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid green;
+}
