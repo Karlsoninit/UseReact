@@ -5,3 +5,5 @@ const Search = ({ value, onFilterSearch }) => (
 );
 
 export default Search;
+
+// console.log()
