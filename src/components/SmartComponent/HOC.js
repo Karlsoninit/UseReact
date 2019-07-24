@@ -47,3 +47,5 @@ const listOpen = NewComponent => {
 };
 
 export default listOpen;
+
+// console.log()
