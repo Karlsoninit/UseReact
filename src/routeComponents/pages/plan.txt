@@ -1,0 +1,67 @@
+onHandleChange = opt => {
+    console.log(opt);
+    console.log(this.props.location);
+    if (opt) {
+      this.props.history.push({
+        ...this.props.location,
+        search: `category=${opt.value}`,
+      });
+    }
+    console.log(this.props.location);
+    FetchAPI(opt.value).then(data => this.setState({ info: data }));
+  };
+
+
+//------------
+
+ // console.log(queryString.parse(this.props.location.search).category);
+
+    const getResult = getCategoryValue(
+      options,
+      queryString.parse(this.props.location.search).category,
+    );
+    console.log(this.props.location.search);
+
+//------------
+
+ <CustomSelector
+          options={options}
+          value={getResult}
+          onHandleChange={this.onHandleChange}
+        />
+
+//--------------
+
+
+    console.log('prevProps', prevProps.location.search);
+    console.log('this.props', this.props.location.search);
+    if (prevProps.location.search !== this.props.location.search) {
+      console.log('no');
+      FetchAPI(this.props.location.search).then(data =>
+        this.setState({ info: data }),
+      );
+    }
+
+
+//------------
+
+const options = [
+  { value: 'ukraine', label: 'Ukraine' },
+  { value: 'usa', label: 'USA' },
+];
+const getCategoryValue = (allCategory, value) =>
+  allCategory.find(el => el.value === value);
+
+
+  //--------
+
+
+  /*eslint-disable */
+import React from 'react';
+import Select from 'react-select';
+
+const CustomSelector = ({ options, onHandleChange, value }) => (
+  <Select options={options} onChange={onHandleChange} value={value} />
+);
+
+export default CustomSelector;
