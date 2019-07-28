@@ -1,5 +1,11 @@
 import React from 'react';
-
-const App = () => <p>Hello</p>;
+import Timer from './Timer/TimerSmartContainer';
+import Select from './Select/Select';
+const App = () => (
+  <>
+    <Timer />
+    <Select />
+  </>
+);
 
 export default App;
