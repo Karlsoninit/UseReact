@@ -1,11 +1,32 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import home from './pages/Home';
-import about from './pages/About';
-import PageNotFound from './pages/PageNotFound';
-import colections from './pages/Colections';
 import Navigation from './Navigation';
-import AlonePage from './pages/AlonePage';
+import Loadable from 'react-loadable';
+import Loading from './Loading';
+
+const HomeLoad = Loadable({
+  loader: () => import('./pages/Home' /* webpackChunkName: "Home-page" */),
+  loading: Loading,
+});
+const AboutLoad = Loadable({
+  loader: () => import('./pages/About' /* webpackChunkName: "About-page" */),
+  loading: Loading,
+});
+const AlonePageLoad = Loadable({
+  loader: () =>
+    import('./pages/AlonePage' /* webpackChunkName: "AlonePage-page" */),
+  loading: Loading,
+});
+const ColectionsLoad = Loadable({
+  loader: () =>
+    import('./pages/Colections' /* webpackChunkName: "Colections-page" */),
+  loading: Loading,
+});
+const PageNotFoundLoad = Loadable({
+  loader: () =>
+    import('./pages/PageNotFound' /* webpackChunkName: "PageNotFound" */),
+  loading: Loading,
+});
 
 const boxStyle = {
   border: '1px solid green',
@@ -19,11 +40,11 @@ const App = () => (
     <Navigation />
     <div style={boxStyle}>
       <Switch>
-        <Route exact path="/" component={home} />
-        <Route path="/about" component={about} />
-        <Route path="/colections/:name" component={AlonePage} />
-        <Route path="/colections" component={colections} />
-        <Route component={PageNotFound} />
+        <Route exact path="/" component={HomeLoad} />
+        <Route path="/about" component={AboutLoad} />
+        <Route path="/colections/:name" component={AlonePageLoad} />
+        <Route path="/colections" component={ColectionsLoad} />
+        <Route component={PageNotFoundLoad} />
       </Switch>
     </div>
   </>
