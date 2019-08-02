@@ -1,20 +1,23 @@
 {
-  "name": "usereact",
+  "name": "use-redux",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.1"
+    "react-lodash": "^0.1.2",
+    "react-redux": "^7.1.0",
+    "react-scripts": "3.0.1",
+    "react-select": "^3.0.4",
+    "redux": "^4.0.4",
+    "redux-logger": "^3.0.6",
+    "reselect": "^4.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "lint": "eslint src/**/*.js",
-    "lint:fix": "eslint src/**/*.js --fix",
-    "lint:format": "prettier src/**/*.{js,css,json} --write"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -32,14 +35,6 @@
     ]
   },
   "devDependencies": {
-    "eslint-config-airbnb": "^17.1.1",
-    "eslint-config-prettier": "^6.0.0",
-    "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-jsx-a11y": "^6.2.3",
-    "eslint-plugin-prettier": "^3.1.0",
-    "eslint-plugin-react": "^7.14.3",
-    "husky": "^3.0.1",
-    "lint-staged": "^9.2.0",
-    "prettier": "^1.18.2"
+    "react-logger": "^1.1.0"
   }
 }
